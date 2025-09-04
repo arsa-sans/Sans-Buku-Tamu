@@ -39,16 +39,28 @@ include_once('templates/header.php');
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>No</th>
-            <th>Tanggal</th>
-            <th>Nama Tamu</th>
-            <th>Alamat</th>
-            <th>No HP</th>
-            <th>Bertemu</th>
-            <th>Kepentingan</th>
-            <th>Aksi</th>
+            <th class="text-center">No</th>
+            <th class="text-center">Tanggal</th>
+            <th class="text-center">Nama Tamu</th>
+            <th class="text-center">Alamat</th>
+            <th class="text-center">No HP</th>
+            <th class="text-center">Bertemu</th>
+            <th class="text-center">Kepentingan</th>
+            <th colspan="2" class="text-center">Aksi</th>
           </tr>
         </thead>
+        <tfoot>
+          <tr>
+            <th class="text-center">No</th>
+            <th class="text-center">Tanggal</th>
+            <th class="text-center">Nama Tamu</th>
+            <th class="text-center">Alamat</th>
+            <th class="text-center">No HP</th>
+            <th class="text-center">Bertemu</th>
+            <th class="text-center">Kepentingan</th>
+            <th colspan="2" class="text-center">Aksi</th>
+          </tr>
+        </tfoot>
         <tbody>
           <?php
             $no = 1;
@@ -56,16 +68,18 @@ include_once('templates/header.php');
             foreach($buku_tamu as $tamu) : 
           ?>
           <tr>
-            <td><?= $no++?></td>
+            <td class="text-center"><?= $no++?></td>
             <td><?= $tamu['tanggal']?></td>
             <td><?= $tamu['nama_tamu']?></td>
             <td><?= $tamu['alamat']?></td>
             <td><?= $tamu['no_hp']?></td>
             <td><?= $tamu['bertemu']?></td>
             <td><?= $tamu['kepentingan']?></td>
-            <td>
-              <button class="btn btn-success" type="button">Ubah</button>
-              <button class="btn btn-danger" type="button">Hapus</button>
+            <td class="text-center">
+              <a class="btn btn-success" href="edit-tamu.php?id=<?= $tamu['id_tamu']?>">Ubah</a>
+            </td>
+            <td class="text-center">
+              <a href="hapus-tamu.php?id=<?= $tamu['id_tamu']?>" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')" class="btn btn-danger">Hapus</a>
             </td>
           </tr>
           <?php endforeach?>
@@ -96,7 +110,7 @@ $kodeTamu = $huruf . sprintf("%03s", $urutan);
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title fs-5" id="tambahModalLabel">Modal title</h5>
+        <h5 class="modal-title fs-5" id="tambahModalLabel">Tambah Tamu</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -135,7 +149,6 @@ $kodeTamu = $huruf . sprintf("%03s", $urutan);
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
           </div>
         </form>
