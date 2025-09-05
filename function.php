@@ -43,7 +43,7 @@ function ubah_tamu($data){
             alamat = '$alamat',
             no_hp = '$no_hp',
             bertemu = '$bertemu',
-            kepentingan = '$kepentingan',
+            kepentingan = '$kepentingan'
             WHERE id_tamu = '$id'";
   mysqli_query($koneksi, $query);
   
