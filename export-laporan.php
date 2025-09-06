@@ -38,5 +38,5 @@ while($d = mysqli_fetch_array($data)){
 
 $writer = new Xlsx($spreadsheet);
 $writer->save('Laporan Buku Tamu.xlsx');
-echo "<script>window.location. ='Laporan Buku Tamu.xlsx';</script>";
+echo "<script>window.location = 'Laporan Buku Tamu.xlsx'</script>";
 ?>
