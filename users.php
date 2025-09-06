@@ -10,6 +10,22 @@ if($_SESSION['role'] != 'admin'){
   exit;
 }
 ?>
+
+<?php
+if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'):
+?>
+<ul>
+  <li>
+    <a href="users.php" class="nav-link">
+      <i class="fas fa-fw fa-users"></i>
+      <span>User</span>
+    </a>
+  </li>
+</ul>
+<?php
+  endif;
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
   <!-- Page Heading -->

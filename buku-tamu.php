@@ -11,24 +11,14 @@ if($_SESSION['role'] != 'operator'){
 }
 if(isset($_SESSION['role']) && $_SESSION['role'] == 'operator'):
 ?>
-<li>
-  <a href="buku-tamu.php" class="nav-link">
-    <i class="fas fa-fw fa-book-open"></i>
-    <span>Buku Tamu</span>
-  </a>
-</li>
-<?php
-  endif;
-?>
-<?php
-if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'):
-?>
+<ul>
   <li>
-    <a href="users.php" class="nav-link">
-      <i class="fas fa-fw fa-users"></i>
-      <span>User</span>
+    <a href="buku-tamu.php" class="nav-link">
+      <i class="fas fa-fw fa-book-open"></i>
+      <span>Buku Tamu</span>
     </a>
   </li>
+</ul>
 <?php
   endif;
 ?>
